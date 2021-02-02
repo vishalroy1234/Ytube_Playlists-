@@ -4,6 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 
+keyword = input("Enter the channel name.\n").title()
+
 driver = webdriver.Chrome('/home/vishal/Downloads/chromedriver')
 driver.get('https://www.youtube.com')
 
@@ -11,7 +13,6 @@ import time
 
 search_bar = driver.find_element_by_name('search_query')
 search_bar.clear()
-keyword = 'Study IQ education '
 search_bar.send_keys(f'{keyword} \n')
 time.sleep(10)
 channel_link = driver.find_element_by_id('main-link').click()
